@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infinity - Luxury skincare and beauty products made with the world's finest plant oils and absolutes. Discover our range of serums, hair care, and natural beauty essentials.">
+    <meta name="keywords" content="luxury skincare, natural beauty, plant oils, serums, hair care, face cream, organic cosmetics">
+    <meta name="theme-color" content="#c0a080">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Infinity - Luxury Skincare & Beauty">
+    <meta property="og:description" content="Skincare made with the world's finest plant oils and absolutes. Natural, high-quality beauty products.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Infinity - Luxury Skincare & Beauty">
+    <meta name="twitter:description" content="Skincare made with the world's finest plant oils and absolutes.">
+    <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg">
+    
+    <link rel="canonical" href="https://yourdomain.com/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <title>Infinity - Luxury Skincare & Beauty | Natural Plant-Based Products</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="logo.svg" as="image" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Updated fonts to Lora for headings and Open Sans for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Inline Critical CSS with CSS Custom Properties -->
+    <style>
+        :root {
+            /* Color Palette */
+            --color-primary: #c0a080;
+            --color-text: #333;
+            --color-text-light: #666;
+            --color-bg: #fff;
+            --color-border: #eee;
+            --color-overlay: rgba(0, 0, 0, 0.6);
+            
+            /* Updated typography system with Lora for headings and Open Sans for body */
+            --font-heading: 'Lora', serif;
+            --font-body: 'Open Sans', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+        }
+        
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+        
+        /* Skip to Content Link for Accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 9999;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+        }
+        
+        /* Focus Styles for Accessibility */
+        *:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+        
+        /* Header Styles */
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(1rem, 3vw, 1.25rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo-container {
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .logo-container img {
+            max-width: clamp(150px, 20vw, 200px);
+            height: auto;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            width: 100%;
+            padding: var(--spacing-sm) 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: clamp(1rem, 3vw, 2rem);
+            flex-wrap: wrap;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 600;
+            font-size: clamp(0.75rem, 2vw, 0.875rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color var(--transition-normal);
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width var(--transition-normal);
+        }
+        
+        .main-nav a:hover,
+        .main-nav a:focus {
+            color: var(--color-primary);
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a:focus::after {
+            width: 100%;
+        }
+        
+        /* Product Categories Nav */
+        .product-categories {
+            width: 100%;
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .product-categories ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            gap: var(--spacing-sm);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .product-categories a {
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-weight: 600;
+            font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color var(--transition-normal);
+        }
+        
+        .product-categories a:hover,
+        .product-categories a:focus {
+            color: var(--color-primary);
+        }
+        
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: none;
+            color: var(--color-text);
+        }
+        
+        .hamburger-menu[aria-expanded="true"] .fa-bars::before {
+            content: "\f00d"; /* Font Awesome times icon */
+        }
+        
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-overlay);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .mobile-menu-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .mobile-menu {
+            background-color: white;
+            padding: var(--spacing-lg);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 300px;
+            text-align: center;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .mobile-menu ul li {
+            margin: var(--spacing-sm) 0;
+        }
+        
+        .mobile-menu ul li a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color var(--transition-normal);
+            display: block;
+            padding: var(--spacing-xs);
+        }
+        
+        .mobile-menu ul li a:hover,
+        .mobile-menu ul li a:focus {
+            color: var(--color-primary);
+        }
+        
+        .mobile-menu hr {
+            margin: var(--spacing-md) 0;
+            border: none;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                        url('hero-bg.jpg') center/cover no-repeat;
+            min-height: clamp(400px, 60vh, 600px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.75rem, 5vw, 3rem);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+        
+        /* Buttons */
+        .button,
+        .download-button,
+        .view-product-btn {
+            display: inline-block;
+            padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+            background-color: var(--color-primary);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all var(--transition-normal);
+            border: 2px solid var(--color-primary);
+            cursor: pointer;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+        
+        .button:hover,
+        .button:focus,
+        .download-button:hover,
+        .download-button:focus,
+        .view-product-btn:hover,
+        .view-product-btn:focus {
+            background-color: transparent;
+            color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(192, 160, 128, 0.3);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: clamp(2rem, 5vw, 4rem) var(--spacing-md);
+        }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-text);
+        }
+        
+        /* Category Grid */
+        /* Redesigned Category Grid with clean card layout */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .category-item-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .category-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--color-border);
+        }
+        
+        .category-item:hover,
+        .category-item:focus-within {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            border-color: var(--color-primary);
+        }
+        
+        .category-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .category-item:hover img,
+        .category-item:focus-within img {
+            transform: scale(1.05);
+        }
+        
+        .category-overlay {
+            padding: var(--spacing-md);
+            background: white;
+            text-align: center;
+        }
+        
+        .category-overlay h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            font-weight: 600;
+            color: var(--color-text);
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform var(--transition-normal);
+        }
+        
+        .product-card:hover,
+        .product-card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            position: relative;
+            padding-top: 100%;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .product-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .product-title {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text);
+            font-weight: 600;
+        }
+        
+        .stock-label {
+            color: #22c55e;
+            font-size: 0.875rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+        }
+        
+        .view-product-btn {
+            width: 100%;
+        }
+        
+        /* Natural Beauty Section */
+        .natural-beauty {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 400px;
+            background-color: #f5f5f5;
+        }
+        
+        .natural-beauty-image {
+            background: url('natural-beauty.jpg') center/cover no-repeat;
+            min-height: 400px;
+        }
+        
+        .natural-beauty-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .natural-beauty-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-text);
+        }
+        
+        /* Countries Section */
+        .countries {
+            background-color: #f9f9f9;
+        }
+        
+        .countries-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .countries-scroll {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-primary) var(--color-border);
+        }
+        
+        .countries-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .countries-scroll::-webkit-scrollbar-track {
+            background: var(--color-border);
+            border-radius: 10px;
+        }
+        
+        .countries-scroll::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 10px;
+        }
+        
+        .countries-grid {
+            display: flex;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            padding: var(--spacing-md) 0;
+        }
+        
+        .country-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            min-width: 120px;
+        }
+        
+        .flag-container {
+            width: 100px;
+            height: 60px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform var(--transition-normal);
+        }
+        
+        .country-item:hover .flag-container,
+        .country-item:focus-within .flag-container {
+            transform: scale(1.05);
+        }
+        
+        .flag-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .country-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text);
+            text-align: center;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-column h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-column input[type="email"] {
+            width: 100%;
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .contact-column input[type="email"]:focus {
+            outline: 3px solid white;
+            outline-offset: 2px;
+        }
+        
+        .contact-column button {
+            width: 100%;
+            padding: var(--spacing-sm);
+            background-color: white;
+            color: #667eea;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .contact-column button:hover,
+        .contact-column button:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            font-size: 1.25rem;
+            margin-top: 2px;
+        }
+        
+        .contact-info p {
+            line-height: 1.6;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .contact-info a:hover,
+        .contact-info a:focus {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+        }
+        
+        .social-icons a:hover,
+        .social-icons a:focus {
+            background-color: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: clamp(2rem, 4vw, 3rem) var(--spacing-md) var(--spacing-md);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-xl);
+            max-width: 1200px;
+            margin: 0 auto var(--spacing-lg);
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .footer-column a:hover,
+        .footer-column a:focus {
+            color: var(--color-primary);
+        }
+
+        /* Added contact info styles in footer */
+        .footer-column .contact-info {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            align-items: flex-start;
+        }
+        
+        .footer-column .contact-info i {
+            font-size: 1.125rem;
+            margin-top: 4px;
+            color: var(--color-primary);
+        }
+        
+        .footer-column .contact-info p {
+            line-height: 1.6;
+            font-size: 0.875rem;
+        }
+        
+        .footer-column .contact-info a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .footer-column .contact-info a:hover,
+        .footer-column .contact-info a:focus {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        /* Added social icons styles in footer */
+        .footer-column .social-icons {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .footer-column .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+        }
+        
+        .footer-column .social-icons a:hover,
+        .footer-column .social-icons a:focus {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+            
+            .main-nav,
+            .product-categories {
+                display: none;
+            }
+            
+            .natural-beauty {
+                grid-template-columns: 1fr;
+            }
+            
+            .natural-beauty-image {
+                min-height: 250px;
+            }
+
+            /* Adjust category cards for mobile */
+            .category-item {
+                width: 280px;
+                height: 210px;
+            }
+
+            /* Responsive adjustments for category grid */
+            .category-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: var(--spacing-md);
+            }
+            
+            .category-item img {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Reduced Motion Preference */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            header,
+            .hamburger-menu,
+            .mobile-menu-overlay,
+            .button,
+            .social-icons {
+                display: none;
+            }
+        }
+    </style>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Infinity Skincare",
+      "description": "Luxury skincare and beauty products made with the world's finest plant oils and absolutes",
+      "url": "https://yourdomain.com",
+      "logo": "https://yourdomain.com/logo.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+90-551-645-80-24",
+        "contactType": "Customer Service",
+        "email": "info@ambassador-md.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mecidiyekoy Mahallesi Ak Sokak No/13",
+        "addressLocality": "Sisli",
+        "addressRegion": "Istanbul",
+        "addressCountry": "TR"
+      },
+      "sameAs": [
+        "https://facebook.com/yourbrand",
+        "https://instagram.com/yourbrand",
+        "https://twitter.com/yourbrand",
+        "https://linkedin.com/company/yourbrand"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.svg" alt="Infinity Skincare Logo" width="200" height="80" fetchpriority="high">
+            </div>
+            <button class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">HOME</a></li>
+                    <li><a href="categories.html">CATEGORIES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <nav class="product-categories" aria-label="Product categories">
+                <ul>
+                    <li><a href="serum.html">SERUM</a></li>
+                    <li><a href="hair-care.html">HAIR CARE</a></li>
+                    <li><a href="peeling-scrub.html">PEELING SCRUB</a></li>
+                    <li><a href="body-wash.html">BODY WASH</a></li>
+                    <li><a href="face-cleanser.html">FACE CLEANSER</a></li>
+                    <li><a href="perfume.html">PERFUME</a></li>
+                    <li><a href="room-fragrance.html">ROOM FRAGRANCE</a></li>
+                    <li><a href="sun-essentials.html">SUN ESSENTIALS</a></li>
+                    <li><a href="body-care.html">BODY CARE</a></li>
+                    <li><a href="face-cream.html">FACE CREAM</a></li>
+                    <li><a href="products-for-men.html">PRODUCTS FOR MEN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <div class="mobile-menu">
+            <h2 id="mobile-menu-title" class="sr-only">Navigation Menu</h2>
+            <nav aria-label="Mobile navigation">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="categories.html">CATEGORIES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <hr>
+                <ul class="product-categories">
+                    <li><a href="serum.html">SERUM</a></li>
+                    <li><a href="hair-care.html">HAIR CARE</a></li>
+                    <li><a href="peeling-scrub.html">PEELING SCRUB</a></li>
+                    <li><a href="body-wash.html">BODY WASH</a></li>
+                    <li><a href="face-cleanser.html">FACE CLEANSER</a></li>
+                    <li><a href="perfume.html">PERFUME</a></li>
+                    <li><a href="room-fragrance.html">ROOM FRAGRANCE</a></li>
+                    <li><a href="sun-essentials.html">SUN ESSENTIALS</a></li>
+                    <li><a href="body-care.html">BODY CARE</a></li>
+                    <li><a href="face-cream.html">FACE CREAM</a></li>
+                    <li><a href="products-for-men.html">PRODUCTS FOR MEN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Skincare made with the world's finest plant oils and absolutes</h1>
+                <p>We all want products consistently rich in simple things. Natural made is easy with the assistance of high-end quality.</p>
+                <a href="#products" class="button">Shop Products</a>
+            </div>
+        </section>
+
+        <section id="categories" class="categories">
+            <h2 class="section-title">Popular Categories</h2>
+            <div class="category-grid">
+                <a href="serum.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/serum.jpg" alt="Luxury serum bottles with droppers" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Serum</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="hair-care.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/haircareproducts.jpg" alt="Various hair care products including shampoo and conditioner bottles" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Hair care products</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="peeling-scrub.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/peelingscrub.jpg" alt="Jar of exfoliating peeling scrub with natural texture" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Peeling scrub</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="body-wash.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/bodywash.jpg" alt="Luxury body wash bottle with natural ingredients" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Body wash</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="face-cleanser.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/facecleanser.jpg" alt="Foaming face cleanser pump bottle" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Face cleanser</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="perfume.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/perfume.jpg" alt="Elegant luxury perfume bottle" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Perfume and spray</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="room-fragrance.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/roomfragrance.jpg" alt="Reed diffuser room fragrance set" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Room fragrance</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="sun-essentials.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/Sun.jpg" alt="Sunscreen and after-sun care products collection" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Sun Essentials and Bronze</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="body-care.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/bodycareproducts.jpg" alt="Assorted body lotions, creams, and moisturizers" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Body Care products</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="face-cream.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/facecream.jpg" alt="Open jar of luxury face cream" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Face cream</h3>
+                        </div>
+                    </article>
+                </a>
+                <a href="products-for-men.html" class="category-item-link">
+                    <article class="category-item">
+                        <img src="Categories/Products_for_men.jpg" alt="Men's grooming products including shave cream and aftershave balm" loading="lazy" width="400" height="300">
+                        <div class="category-overlay">
+                            <h3>Products for Men</h3>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <h2 class="section-title">Best Seller Products</h2>
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="BEST SELLER/22.jpg" alt="Period Pain Heat Pad for natural pain relief" loading="lazy" width="300" height="300">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Period Pain Heat Pad</h3>
+                        <p class="stock-label" role="status">Available in Stock</p>
+                        <button class="view-product-btn" aria-label="View Period Pain Heat Pad product details">VIEW PRODUCT</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="BEST SELLER/2.jpg" alt="Niacinamide TXA Serum 30ml for brightening and even skin tone" loading="lazy" width="300" height="300">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Niacinamide Txa Serum 30ml</h3>
+                        <p class="stock-label" role="status">Available in Stock</p>
+                        <button class="view-product-btn" aria-label="View Niacinamide TXA Serum product details">VIEW PRODUCT</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="BEST SELLER/7.png" alt="Mineral Sun Stick SPF 50 for sun protection" loading="lazy" width="300" height="300">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mineral sun stick SPF 50</h3>
+                        <p class="stock-label" role="status">Available in Stock</p>
+                        <button class="view-product-btn" aria-label="View Mineral Sun Stick SPF 50 product details">VIEW PRODUCT</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="BEST SELLER/15.png" alt="Eyebrow and Eyelash Care Serum for growth and nourishment" loading="lazy" width="300" height="300">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Eyebrow & Eyelash Care Serum</h3>
+                        <p class="stock-label" role="status">Available in Stock</p>
+                        <button class="view-product-btn" aria-label="View Eyebrow & Eyelash Care Serum product details">VIEW PRODUCT</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="natural-beauty">
+            <div class="natural-beauty-image" role="img" aria-label="Natural beauty ingredients and botanical extracts"></div>
+            <div class="natural-beauty-content">
+                <h2>Download our catalog</h2>
+                <a href="INFINITY.pdf" class="download-button" download aria-label="Download Infinity product catalog PDF">Download</a>
+            </div>
+        </section>
+
+        <section class="countries">
+            <h2 class="section-title">Our Countries That We Work With</h2>
+            <div class="countries-container">
+                <div class="countries-scroll" role="region" aria-label="List of countries we work with">
+                    <div class="countries-grid">
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Algeria.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Algeria</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Bahrain.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Bahrain</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Djibouti.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Djibouti</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Egypt.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Egypt</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Germany.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Germany</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_India.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">India</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Iraq.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Iraq</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Jordan.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Jordan</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Kuwait.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Kuwait</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Libya.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Libya</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Mauritania.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Mauritania</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Morocco.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Morocco</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Qatar.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Qatar</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Somalia.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Somalia</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_the_Comoros.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Comoros</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_the_People's_Republic_of_China.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">China</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_the_United_Arab_Emirates.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">UAE</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Tunisia.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Tunisia</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Turkey.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Turkey</span>
+                        </div>
+                        <div class="country-item">
+                            <div class="flag-container">
+                                <img src="flags/Flag_of_Yemen.svg" alt="" width="100" height="60" loading="lazy" role="presentation">
+                            </div>
+                            <span class="country-name">Yemen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <p>MECIDIYEKOY MAHALLESI AK SOKAK NO/13- SISLI/ISTANBUL</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <p><a href="tel:+905516458024">+90 551 645 80 24</a></p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <p>
+                        <a href="mailto:info@ambassador-md.com">info@ambassador-md.com</a><br>
+                        <a href="mailto:infinity@ambassador-md.com">infinity@ambassador-md.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com/yourbrand" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://instagram.com/yourbrand" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/yourbrand" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/yourbrand" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>About Infinity</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#products">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Product Categories</h3>
+                <ul>
+                    <li><a href="serum.html">Serum</a></li>
+                    <li><a href="hair-care.html">Hair Care</a></li>
+                    <li><a href="peeling-scrub.html">Peeling Scrub</a></li>
+                    <li><a href="body-wash.html">Body Wash</a></li>
+                    <li><a href="face-cleanser.html">Face Cleanser</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>More Products</h3>
+                <ul>
+                    <li><a href="perfume.html">Perfume</a></li>
+                    <li><a href="room-fragrance.html">Room Fragrance</a></li>
+                    <li><a href="sun-essentials.html">Sun Essentials</a></li>
+                    <li><a href="body-care.html">Body Care</a></li>
+                    <li><a href="face-cream.html">Face Cream</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #333; color: #888;">
+            <p>&copy; 2025 Infinity Skincare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Update focus for accessibility
+                        target.focus();
+                    }
+                }
+            });
+        });
+
+        // Toggle mobile menu with proper ARIA attributes
+        function toggleMenu() {
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const hamburgerBtn = document.querySelector('.hamburger-menu');
+            const isActive = mobileMenuOverlay.classList.contains('active');
+            
+            mobileMenuOverlay.classList.toggle('active');
+            hamburgerBtn.setAttribute('aria-expanded', !isActive);
+            
+            // Trap focus in modal when open
+            if (!isActive) {
+                document.body.style.overflow = 'hidden';
+                const firstLink = mobileMenuOverlay.querySelector('a');
+                if (firstLink) firstLink.focus();
+            } else {
+                document.body.style.overflow = '';
+                hamburgerBtn.focus();
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.getElementById('mobileMenuOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleMenu();
+            }
+        });
+
+        // Close mobile menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+                if (mobileMenuOverlay.classList.contains('active')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Newsletter subscription handlers
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const email = document.getElementById('footer-email').value;
+            alert('Thank you for subscribing to our newsletter! Email: ' + email);
+            event.target.reset();
+            return false;
+        }
+
+        // Add screen reader only utility class
+        const style = document.createElement('style');
+        style.textContent = `
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border-width: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
